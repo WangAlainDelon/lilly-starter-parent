@@ -1,0 +1,23 @@
+spring:
+#  application:
+#    name: lilly-demo
+#  datasource:
+#    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false}
+#    username: ${SPRING_DATASOURCE_USERNAME:root}
+#    password: ${SPRING_DATASOURCE_PASSWORD:133309}
+#    driver-class-name: com.mysql.jdbc.Driver
+#  session:
+#    store-type: none
+  thymeleaf:
+    prefix:
+      classpath: /templates   # 访问template下的html文件需要配置模板，映射
+    cache: false # 开发时关闭缓存,不然没法看到实时页面
+    encoding: UTF-8
+logging:
+  level:
+    org.apache.ibatis: ${LOG_LEVEL:debug}
+    io.choerodon: ${LOG_LEVEL:debug}
+    org.hzero: ${LOG_LEVEL:debug}
+
+#配置浏览器安全还是app安全
+#配置登录页面

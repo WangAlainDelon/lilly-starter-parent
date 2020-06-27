@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>系统内置标准登录页面</h1>
+<h4>表单登录</h4>
+<form th:action="@{/authentication/form}" method="post">
+    <p th:if="${error != null}">
+        <span>
+            <font>Invalid username and password.</font>
+        </span>
+    </p>
+    <p th:if="${logout != null}">
+        <span>You are logout.</span>
+    </p>
+    <p>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"/>
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+    </p>
+    <p>
+        <label for="imageCode">验证码</label>
+        <input type="text" id="imageCode" name="imageCode"/>
+        <img src="/code/image">
+    </p>
+    <p>
+        <label>记住我</label>
+        <input name="remember-me" type="checkbox" value="true"/>
+    </p>
+    <input type="hidden"
+           th:name="${_csrf.parameterName}"
+           th:value="${_csrf.token}"/>
+    <button type="submit" class="btn">Log in</button>
+</form>
+<h4>短信登录</h4>
+<form th:action="@{/authentication/mobile}" method="post">
+    <p th:if="${error != null}">
+        <span>
+            <font>Invalid username and password.</font>
+        </span>
+    </p>
+    <p th:if="${logout != null}">
+        <span>You are logout.</span>
+    </p>
+    <p>
+        <label for="mobile">手机号</label>
+        <input type="text" id="mobile" name="mobile" value="13330914915"/>
+    </p>
+    <p>
+        <label for="smsCode">手机验证码</label>
+        <input type="smsCode" id="smsCode" name="smsCode"/>
+        <a href="/sms/code?mobile=13330914915">发送验证码</a>
+    </p>
+
+    <input type="hidden"
+           th:name="${_csrf.parameterName}"
+           th:value="${_csrf.token}"/>
+    <button type="submit" class="btn">Log in</button>
+</form>
+</body>
+</html>

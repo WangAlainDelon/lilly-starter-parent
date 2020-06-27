@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "lilly.security",
+      "type": "org.lilly.core.properties.SecurityProperties",
+      "sourceType": "org.lilly.core.properties.SecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "lilly.security.browser",
+      "type": "org.lilly.core.properties.BrowserProperties",
+      "sourceType": "org.lilly.core.properties.SecurityProperties"
+    },
+    {
+      "name": "lilly.security.validate-code",
+      "type": "org.lilly.core.properties.ValidateCodeProperties",
+      "sourceType": "org.lilly.core.properties.SecurityProperties"
+    }
+  ],
+  "hints": []
+}
