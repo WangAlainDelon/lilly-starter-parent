@@ -22,12 +22,12 @@ public class ValidateCodeBeanConfig {
 
     /**
      * 当Spring容器中没有名字为validateImageGenerator的bean时，才走下面的这段配置
-     *
+     * 注入容器的bean的名字为imageValidateGenerator
      * @return ValidateGenerator
      */
     @Bean
     @ConditionalOnMissingBean(name = "imageValidateGenerator")
-    public ValidateGenerator validateImageGenerator() {
+    public ValidateGenerator imageValidateGenerator() {
         ValidateImageGenerator validateImageGenerator = new ValidateImageGenerator(securityProperties);
         return validateImageGenerator;
     }

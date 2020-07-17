@@ -1,6 +1,8 @@
 package org.lilly.core.properties;
 
 
+import org.lilly.core.enums.LoginType;
+
 /**
  * User: Mr.Wang
  * Date: 2020/6/7

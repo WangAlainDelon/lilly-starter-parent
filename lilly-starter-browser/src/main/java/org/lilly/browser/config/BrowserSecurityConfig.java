@@ -2,7 +2,10 @@ package org.lilly.browser.config;
 
 import org.lilly.browser.authentication.LillyAuthenticationFailureHandler;
 import org.lilly.browser.authentication.LillyAuthenticationSuccessHandler;
+import org.lilly.core.authentication.config.SmsSecurityConfig;
+import org.lilly.core.authentication.mobile.SmsAuthenticationFilter;
 import org.lilly.core.properties.SecurityProperties;
+import org.lilly.core.validate.filter.SmsValidateCodeFilter;
 import org.lilly.core.validate.filter.ValidateCodeFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -39,21 +42,27 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private SmsSecurityConfig smsSecurityConfig;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         ValidateCodeFilter validateCodeFilter = new ValidateCodeFilter(lillyAuthenticationFailureHandler, securityProperties);
+        SmsValidateCodeFilter smsValidateCodeFilter = new SmsValidateCodeFilter(lillyAuthenticationFailureHandler, securityProperties);
 //        validateCodeFilter.afterPropertiesSet();
+
         http
                 .authorizeRequests().antMatchers("/index",
                 "/authentication/require",
-                "/code/image",
-                "/sms/code",
+                "/authentication/form",
+                "/authentication/mobile",
+                "/code/*",
                 securityProperties.getBrowser().getLoginPage())  //允许不登陆就可以访问的方法，多个用逗号分隔
                 .permitAll()
                 .anyRequest().authenticated()  //其他的需要授权后访问
                 .and()
                 .addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(smsValidateCodeFilter, UsernamePasswordAuthenticationFilter.class)
                 .formLogin()   //使用form表单post方式进行登录
                 .loginPage("/authentication/require")       //自定义登录页面的跳转
                 .loginProcessingUrl("/authentication/form") //表单登陆提交的登陆请求地址
@@ -66,8 +75,9 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 .rememberMe()
                 .tokenRepository(tokenRepository())
                 .userDetailsService(userDetailsService)
-                .tokenValiditySeconds(securityProperties.getBrowser().getRememberMeSeconds());
-
+                .tokenValiditySeconds(securityProperties.getBrowser().getRememberMeSeconds())
+                .and()
+                .apply(smsSecurityConfig);
 
         //关闭打开的csrf保护
 //        http.cors().and().csrf().disable();

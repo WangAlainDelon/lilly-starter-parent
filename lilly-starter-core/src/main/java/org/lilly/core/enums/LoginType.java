@@ -1,4 +1,4 @@
-package org.lilly.core.properties;
+package org.lilly.core.enums;
 
 /**
  * User: Mr.Wang

@@ -15,7 +15,7 @@ import org.springframework.web.context.request.ServletWebRequest;
  * User: Mr.Wang
  * Date: 2020/6/21
  */
-public abstract class AbstractValidateCodeProcessorImpl<C extends ValidateCode> implements ValidateCodeProcessor {
+public abstract class AbstractValidateCodeProcessorImpl<T extends ValidateCode> implements ValidateCodeProcessor {
     private static final String SESSION_KEY = "SESSION_CODE_";
     private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 
@@ -24,11 +24,11 @@ public abstract class AbstractValidateCodeProcessorImpl<C extends ValidateCode> 
 
     @Override
     public void create(ServletWebRequest request) throws ServletRequestBindingException {
-        //1.生成验证码
+        //1.生成验证码，根据传入的类型调用不同的生成器来生成验证码。
         ValidateCode validateCode = generator(request);
-        //2.保存验证码
+        //2.保存验证码的逻辑一样
         save(validateCode, request);
-        //3.发送验证码
+        //3.发送验证码交给子类实现
         send(validateCode, request);
     }
 
@@ -55,6 +55,6 @@ public abstract class AbstractValidateCodeProcessorImpl<C extends ValidateCode> 
 
     private String getRequestType(ServletWebRequest request) {
         // /code/sms  -> sms
-        return StringUtils.substringAfter(request.getRequest().getRequestURI(), "/code");
+        return StringUtils.substringAfter(request.getRequest().getRequestURI(), "/code/");
     }
 }

@@ -1,6 +1,6 @@
-package org.lilly.browser.service.impl;
+package org.lilly.core.service.impl;
 
-import org.lilly.browser.service.MyUserDetailsService;
+import org.lilly.core.service.MyUserDetailsService;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,10 +18,13 @@ public class MyUserDetailsServiceImpl implements MyUserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return new User("admin", new BCryptPasswordEncoder().encode("admin"),
                 AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+    }
 
+    @Override
+    public UserDetails loadUserByMobile(String mobile) throws UsernameNotFoundException {
 
-//        return new User("admin", new BCryptPasswordEncoder().encode("admin"),
-//                true, true, true, false,
-//                AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+        return new User("admin", new BCryptPasswordEncoder().encode("admin"),
+                true, true, true, false,
+                AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
     }
 }

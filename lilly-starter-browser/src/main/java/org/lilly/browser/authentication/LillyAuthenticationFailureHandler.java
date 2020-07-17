@@ -1,7 +1,7 @@
 package org.lilly.browser.authentication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.lilly.core.properties.LoginType;
+import org.lilly.core.enums.LoginType;
 import org.lilly.core.properties.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

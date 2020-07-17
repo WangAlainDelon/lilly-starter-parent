@@ -34,6 +34,8 @@
            th:value="${_csrf.token}"/>
     <button type="submit" class="btn">Log in</button>
 </form>
+
+
 <h4>短信登录</h4>
 <form th:action="@{/authentication/mobile}" method="post">
     <p th:if="${error != null}">
@@ -51,7 +53,7 @@
     <p>
         <label for="smsCode">手机验证码</label>
         <input type="smsCode" id="smsCode" name="smsCode"/>
-        <a href="/sms/code?mobile=13330914915">发送验证码</a>
+        <a href="/code/sms?mobile=13330914915">发送验证码</a>
     </p>
 
     <input type="hidden"

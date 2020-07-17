@@ -28,7 +28,7 @@ import java.util.Set;
  */
 public class ValidateCodeFilter extends OncePerRequestFilter {
 
-    private static final String SESSION_KEY = "SESSION_CODE";
+    private static final String SESSION_KEY = "SESSION_CODE_";
 
     private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
     private AntPathMatcher antPathMatcher = new AntPathMatcher();

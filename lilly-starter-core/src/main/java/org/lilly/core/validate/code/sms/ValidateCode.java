@@ -47,6 +47,6 @@ public class ValidateCode {
     }
 
     public boolean isExpire() {
-        return LocalDateTime.now().isBefore(expireTime);
+        return LocalDateTime.now().isAfter(expireTime);
     }
 }

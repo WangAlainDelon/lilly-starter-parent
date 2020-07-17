@@ -50,11 +50,6 @@ public class ValidateCodeController {
     public void createCode(@PathVariable String type,
                            HttpServletRequest httpRequest,
                            HttpServletResponse httpResponse) throws ServletRequestBindingException {
-        for (Map.Entry<String, ValidateCodeProcessor> stringValidateCodeProcessorEntry : codeProcessorMap.entrySet()) {
-
-            System.out.println(stringValidateCodeProcessorEntry.getKey());
-
-        }
         codeProcessorMap.get(type + "ValidateProcessor")
                 .create(new ServletWebRequest(httpRequest, httpResponse));
     }
