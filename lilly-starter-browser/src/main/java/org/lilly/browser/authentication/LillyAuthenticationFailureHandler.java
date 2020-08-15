@@ -31,29 +31,14 @@ public class LillyAuthenticationFailureHandler extends SimpleUrlAuthenticationFa
     @Override
     public void onAuthenticationFailure(HttpServletRequest request,
                                         HttpServletResponse response,
-                                        AuthenticationException exception) throws ServletException {
+                                        AuthenticationException exception) throws IOException, ServletException {
         logger.info("用户登录失败");
         if (LoginType.JSON.equals(securityProperties.getBrowser().getLoginType())) {
             response.setContentType("application/json;charset=UTF-8");
             response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-            try {
-                response.getWriter().write(objectMapper.writeValueAsString(exception));
-            } catch (IOException e) {
-                try {
-                    if (response.getWriter() != null) {
-                        response.getWriter().close();
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-                e.printStackTrace();
-            }
+            response.getWriter().write(objectMapper.writeValueAsString(exception));
         } else {
-            try {
-                super.onAuthenticationFailure(request, response, exception);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            super.onAuthenticationFailure(request, response, exception);
         }
     }
 }

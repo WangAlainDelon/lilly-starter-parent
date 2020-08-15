@@ -1,14 +1,14 @@
-package org.lilly.core.authentication.config;
+package org.lilly.core.config;
 
 
 import org.lilly.core.authentication.mobile.SmsAuthenticationFilter;
 import org.lilly.core.authentication.mobile.SmsAuthenticationProvider;
-import org.lilly.core.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.*;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * SecurityConfigurerAdapter用于将自定义的校验组织组件串起来
  */
 @Component
-public class SmsSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
+public class SmsCodeAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
     @Autowired
     private AuthenticationSuccessHandler authenticationSuccessHandler;
@@ -27,7 +27,7 @@ public class SmsSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurity
     private AuthenticationFailureHandler authenticationFailureHandler;
 
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private UserDetailsService myUserDetailsService;
 
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {

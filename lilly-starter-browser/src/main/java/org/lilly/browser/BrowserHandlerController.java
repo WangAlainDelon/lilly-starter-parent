@@ -41,7 +41,7 @@ public class BrowserHandlerController {
 
     /**
      * loginPage为/authentication/require
-     *
+     * 自定义登录页面的跳转
      * @param request
      * @param response
      * @return

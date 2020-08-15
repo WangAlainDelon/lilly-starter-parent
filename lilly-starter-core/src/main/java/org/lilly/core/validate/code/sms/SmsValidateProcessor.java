@@ -44,7 +44,7 @@ public class SmsValidateProcessor extends AbstractValidateCodeProcessorImpl {
         //请求中传来的验证码
         String smsCode = ServletRequestUtils.getStringParameter(servletWebRequest.getRequest(), "smsCode");
         // session key
-        String key = SecurityConstant.SESSION_KEY + "sms";
+        String key = SecurityConstant.SESSION_KEY + "SMS";
         ValidateCode sessionValidateCode = (ValidateCode) sessionStrategy.getAttribute(servletWebRequest, key);
         if (StringUtils.isBlank(smsCode)) {
             throw new ValidateException("验证码为空");
@@ -55,7 +55,7 @@ public class SmsValidateProcessor extends AbstractValidateCodeProcessorImpl {
         if (sessionValidateCode.isExpire()) {
             throw new ValidateException("验证码已过期");
         }
-        if (StringUtils.equalsIgnoreCase(sessionValidateCode.getCode(), smsCode)) {
+        if (!StringUtils.equalsIgnoreCase(sessionValidateCode.getCode(), smsCode)) {
             throw new ValidateException("验证码已过期");
         }
 

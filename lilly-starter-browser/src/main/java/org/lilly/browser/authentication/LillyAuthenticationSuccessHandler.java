@@ -32,28 +32,14 @@ public class LillyAuthenticationSuccessHandler extends SavedRequestAwareAuthenti
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
                                         HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws
-            ServletException {
+            IOException, ServletException {
         logger.info("登录成功");
         if (LoginType.JSON.equals(securityProperties.getBrowser().getLoginType())) {
             httpServletResponse.setContentType("application/json;charset=UTF-8");
-            try {
-                httpServletResponse.getWriter().write(objectMapper.writeValueAsString(authentication));
-            } catch (IOException e) {
-                try {
-                    if (httpServletResponse.getWriter() != null) {
-                        httpServletResponse.getWriter().close();
-                    }
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-                e.printStackTrace();
-            }
+            logger.info(objectMapper.writeValueAsString(authentication));
+            httpServletResponse.getWriter().write(objectMapper.writeValueAsString(authentication));
         } else {
-            try {
-                super.onAuthenticationSuccess(httpServletRequest, httpServletResponse, authentication);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            super.onAuthenticationSuccess(httpServletRequest, httpServletResponse, authentication);
         }
     }
 }

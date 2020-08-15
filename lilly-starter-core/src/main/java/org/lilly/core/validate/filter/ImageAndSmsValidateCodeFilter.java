@@ -27,7 +27,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 /**
  * 图形验证码，短信验证码的校验Filter
  */
-@Component("validateCodeFilter")
+@Component("imageAndSmsValidateCodeFilter")
 public class ImageAndSmsValidateCodeFilter extends OncePerRequestFilter implements InitializingBean {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
@@ -51,22 +51,22 @@ public class ImageAndSmsValidateCodeFilter extends OncePerRequestFilter implemen
 
         //1.根据请求的url获取需要检验码校验的类型
         ValidateCodeType validateCodeType = urlsMap.get(httpServletRequest.getRequestURI());
-        if (validateCodeType == null) {
-            filterChain.doFilter(httpServletRequest, httpServletResponse);
+        if (validateCodeType != null) {
+            //2.根据校验类型获取校验码的校验逻辑
+            try {
+                LOGGER.info("校验请求（" + httpServletRequest.getRequestURI() + "）中的验证码，验证码类型为" + validateCodeType);
+                validateCodeProcessorHolder
+                        .findValidateCodeProcessorByType(validateCodeType)
+                        .validate(new ServletWebRequest(httpServletRequest, httpServletResponse));
+            } catch (ValidateException e) {
+                //如果有异常，用登录失败异常处理器,这里必须处理AuthenticationException
+                authenticationFailureHandler.onAuthenticationFailure(httpServletRequest, httpServletResponse, e);
+                //验证码校验有异常必须要返回，不然还会去验用户名和密码。
+                return;
+            }
         }
-        //2.根据校验类型获取校验码的校验逻辑
-        try {
-            LOGGER.info("校验请求（" + httpServletRequest.getRequestURI() + "）中的验证码，验证码类型为" + validateCodeType);
-            validateCodeProcessorHolder
-                    .findValidateCodeProcessorByType(validateCodeType)
-                    .validate(new ServletWebRequest(httpServletRequest, httpServletResponse));
-        } catch (ValidateException e) {
-            //如果有异常，用登录失败异常处理器,这里必须处理AuthenticationException
-            authenticationFailureHandler.onAuthenticationFailure(httpServletRequest, httpServletResponse, e);
-            //验证码校验有异常必须要返回，不然还会去验用户名和密码。
-            return;
-
-        }
+        //doFilter >>>>>>>
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 
     /**
@@ -79,12 +79,12 @@ public class ImageAndSmsValidateCodeFilter extends OncePerRequestFilter implemen
     public void afterPropertiesSet() throws ServletException {
         super.afterPropertiesSet();
         //添加表单登录的请求
-        urlsMap.put(SecurityConstant.AUTHENTICATION_FORM, ValidateCodeType.IMAGE);
+        urlsMap.put(SecurityConstant.AUTHENTICATION_FORM_LOGIN, ValidateCodeType.IMAGE);
         //添加用户配置的拦截url
         addUrlsToMap(securityProperties.getValidateCode().getImageCode().getUrl(), ValidateCodeType.IMAGE);
 
         //添加短信登录请求
-        urlsMap.put(SecurityConstant.AUTHENTICATION_MOBILE, ValidateCodeType.SMS);
+        urlsMap.put(SecurityConstant.AUTHENTICATION_MOBILE_LOGIN, ValidateCodeType.SMS);
         addUrlsToMap(securityProperties.getValidateCode().getSmsCode().getUrl(), ValidateCodeType.SMS);
 
     }

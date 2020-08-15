@@ -53,7 +53,7 @@ public class ImageValidateProcessor extends AbstractValidateCodeProcessorImpl {
      */
     @Override
     public void validate(ServletWebRequest servletWebRequest) {
-        String key = SecurityConstant.SESSION_KEY + "image";
+        String key = SecurityConstant.SESSION_KEY + "IMAGE";
         ImageCode sessionImageCode = (ImageCode) sessionStrategy.getAttribute(servletWebRequest, key);
         String imageCode = servletWebRequest.getRequest().getParameter("imageCode");
         if (StringUtils.isBlank(imageCode)) {
@@ -65,7 +65,7 @@ public class ImageValidateProcessor extends AbstractValidateCodeProcessorImpl {
         if (sessionImageCode.isExpire()) {
             throw new ValidateException("验证码过期");
         }
-        if (StringUtils.equalsIgnoreCase(imageCode, sessionImageCode.getCode())) {
+        if (!StringUtils.equalsIgnoreCase(imageCode, sessionImageCode.getCode())) {
             throw new ValidateException("验证码不匹配");
         }
     }

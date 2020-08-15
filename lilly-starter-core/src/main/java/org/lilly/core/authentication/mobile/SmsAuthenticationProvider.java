@@ -2,7 +2,6 @@ package org.lilly.core.authentication.mobile;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.lilly.core.service.MyUserDetailsService;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
@@ -12,6 +11,7 @@ import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
 import org.springframework.security.core.authority.mapping.NullAuthoritiesMapper;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.Assert;
 
@@ -27,7 +27,7 @@ public class SmsAuthenticationProvider implements AuthenticationProvider {
     // ================================================================================================
     protected MessageSourceAccessor messages = SpringSecurityMessageSource.getAccessor();
     private GrantedAuthoritiesMapper authoritiesMapper = new NullAuthoritiesMapper();
-    private MyUserDetailsService myUserDetailsService;
+    private UserDetailsService myUserDetailsService;
 
 
     // ~ Methods
@@ -108,7 +108,7 @@ public class SmsAuthenticationProvider implements AuthenticationProvider {
         UserDetails loadedUser;
 
         try {
-            loadedUser = this.getMyUserDetailsService().loadUserByMobile(mobile);
+            loadedUser = this.getMyUserDetailsService().loadUserByUsername(mobile);
         } catch (AuthenticationException notFound) {
             throw notFound;
         } catch (Exception repositoryProblem) {
@@ -132,11 +132,11 @@ public class SmsAuthenticationProvider implements AuthenticationProvider {
         this.authoritiesMapper = authoritiesMapper;
     }
 
-    public MyUserDetailsService getMyUserDetailsService() {
+    public UserDetailsService getMyUserDetailsService() {
         return myUserDetailsService;
     }
 
-    public void setMyUserDetailsService(MyUserDetailsService myUserDetailsService) {
+    public void setMyUserDetailsService(UserDetailsService myUserDetailsService) {
         this.myUserDetailsService = myUserDetailsService;
     }
 }
