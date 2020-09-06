@@ -20,52 +20,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d72efd9f-ab65-4927-bb1e-b119f5726011" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/lilly-starter-app/src/main/java/org/lilly/app/authentication/LillyAuthenticationFailureHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-app/src/main/java/org/lilly/app/authentication/LillyAuthenticationSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-app/src/main/java/org/lilly/app/config/AppSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/config/AbstractChannelSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/config/ValidateCodeSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/SocialConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/api/QQ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/api/QQImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/conditionconfig/QQAutoConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/privder/QQServiceProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/support/SocialUserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/properties/social/QQProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/properties/social/SocialProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/defect/SocialAutoConfigurerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/defect/SocialProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/defect/SocialWebAutoConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/conditionconfig/LillySpringSocialConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/oauth2/QQOAuth2Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/resources/templates/standard-signUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-app/src/main/java/org/lilly/app/config/AppSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-app/src/main/java/org/lilly/app/config/AppSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-app/target/classes/org/lilly/app/config/AppSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-app/target/classes/org/lilly/app/config/AppSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lilly-starter-app/target/lilly-starter-app-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-app/target/lilly-starter-app-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/BrowserHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/BrowserHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/BrowserSecurityController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/authentication/LillyAuthenticationFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/authentication/LillyAuthenticationFailureHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/authentication/LillyAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/authentication/LillyAuthenticationSuccessHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/config/BrowserSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/config/BrowserSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/BrowserSecurityController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/authentication/LillyAuthenticationFailureHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/authentication/LillyAuthenticationFailureHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/authentication/LillyAuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/authentication/LillyAuthenticationSuccessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/BrowserHandlerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/BrowserHandlerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/config/BrowserSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/target/classes/org/lilly/browser/config/BrowserSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lilly-starter-browser/target/lilly-starter-browser-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-browser/target/lilly-starter-browser-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/authentication/config/SmsSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/config/SmsCodeAuthenticationSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/authentication/mobile/SmsAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/authentication/mobile/SmsAuthenticationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/service/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/service/MyUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/service/impl/MyUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/service/impl/MyUserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/utils/SecurityConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/utils/SecurityConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/code/image/ImageValidateProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/code/image/ImageValidateProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/code/sms/SmsValidateProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/code/sms/SmsValidateProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/filter/ImageAndSmsValidateCodeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/filter/ImageAndSmsValidateCodeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/filter/SmsValidateCodeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/filter/SmsValidateCodeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/filter/ValidateCodeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/validate/filter/ValidateCodeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/authentication/config/SmsSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/authentication/mobile/SmsAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/authentication/mobile/SmsAuthenticationProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/service/MyUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/service/impl/MyUserDetailsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/utils/SecurityConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/utils/SecurityConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/code/image/ImageValidateProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/code/image/ImageValidateProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/code/sms/SmsValidateProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/code/sms/SmsValidateProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/filter/ImageAndSmsValidateCodeFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/filter/ImageAndSmsValidateCodeFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/filter/SmsValidateCodeFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/validate/filter/ValidateCodeFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/config/ValidateCodeSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/config/ValidateCodeSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/properties/BrowserProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/properties/BrowserProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/properties/SecurityProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/properties/SecurityProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/SocialConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/SocialConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/conditionconfig/QQAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/conditionconfig/QQAutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/connection/QQConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/privder/QQServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/privder/QQServiceProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/src/main/resources/templates/standard-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/src/main/resources/templates/standard-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/config/ValidateCodeSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/config/ValidateCodeSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/properties/BrowserProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/properties/BrowserProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/properties/SecurityProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/properties/SecurityProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/SocialConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/SocialConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/conditionconfig/QQAutoConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/conditionconfig/QQAutoConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/connection/QQAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/connection/QQAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/connection/QQConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/connection/QQConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/privder/QQServiceProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/org/lilly/core/social/qq/privder/QQServiceProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/classes/templates/standard-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/classes/templates/standard-login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lilly-starter-core/target/lilly-starter-core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lilly-starter-core/target/lilly-starter-core.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,8 +80,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/lilly-starter-app/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/qq/SocialConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lilly-starter-browser/src/main/java/org/lilly/browser/config/BrowserSecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/lilly-starter-app/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lilly-starter-browser/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
@@ -115,27 +110,27 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources\templates" />
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-browser\src\main\resources\templates" />
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources\static" />
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-browser\src\main\resources\static" />
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.lilly.core.validate.code" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\lilly\lilly-starter-parent\lilly-starter-browser\src\main\java\org\lilly\browser\support" />
+      <recent name="D:\project\lilly\lilly-starter-parent\lilly-starter-core\src\main\resources\templates" />
       <recent name="D:\project\lilly\lilly-starter-parent\lilly-starter-app\src\main\java\org\lilly\app" />
       <recent name="D:\project\lilly\lilly-starter-parent\lilly-starter-core\src\main\java\org\lilly\core" />
       <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-browser\src\main\resources" />
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources" />
-      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-browser\src\main\java\org\lilly\browser" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.lilly.app.config" />
       <recent name="org.lilly.core.validate.filter" />
       <recent name="org.lilly.browser.support" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.lilly.core.validate.code" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources\templates" />
+      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-browser\src\main\resources\templates" />
+      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources\static" />
+      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-browser\src\main\resources\static" />
+      <recent name="D:\IDEA\lilly-starter-parent\lilly-starter-core\src\main\resources" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -283,7 +278,13 @@
       <workItem from="1596981718897" duration="7608000" />
       <workItem from="1597148602623" duration="1391000" />
       <workItem from="1597216181205" duration="598000" />
-      <workItem from="1597467140587" duration="13082000" />
+      <workItem from="1597467140587" duration="20082000" />
+      <workItem from="1597498035628" duration="15136000" />
+      <workItem from="1598686466297" duration="1346000" />
+      <workItem from="1598784185417" duration="3379000" />
+      <workItem from="1598883107046" duration="11584000" />
+      <workItem from="1599040930350" duration="8733000" />
+      <workItem from="1599061647521" duration="9508000" />
     </task>
     <servers />
   </component>
@@ -303,10 +304,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1596984940659">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599117382886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596984940659" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599117382886" />
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1599054713935">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599054713935" />
     <state x="357" y="335" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594997272889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -319,46 +324,50 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594915956352" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1597467146107">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599061752647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597467146107" />
-    <state width="1493" height="273" key="GridCell.Tab.0.bottom" timestamp="1597481031644">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599061752647" />
+    <state width="1493" height="269" key="GridCell.Tab.0.bottom" timestamp="1599140669798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597481031644" />
-    <state width="1493" height="273" key="GridCell.Tab.0.center" timestamp="1597481031644">
+    <state width="1493" height="269" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599140669798" />
+    <state width="1493" height="269" key="GridCell.Tab.0.center" timestamp="1599140669798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597481031644" />
-    <state width="1493" height="273" key="GridCell.Tab.0.left" timestamp="1597481031644">
+    <state width="1493" height="269" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599140669798" />
+    <state width="1493" height="269" key="GridCell.Tab.0.left" timestamp="1599140669798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597481031644" />
-    <state width="1493" height="273" key="GridCell.Tab.0.right" timestamp="1597481031644">
+    <state width="1493" height="269" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599140669798" />
+    <state width="1493" height="269" key="GridCell.Tab.0.right" timestamp="1599140669798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="273" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597481031644" />
+    <state width="1493" height="269" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599140669798" />
     <state x="270" y="57" key="SettingsEditor" timestamp="1595202481508">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595202481508" />
-    <state x="468" y="120" width="654" height="584" key="find.popup" timestamp="1597469043551">
+    <state x="468" y="120" width="654" height="584" key="find.popup" timestamp="1597510431179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="468" y="120" width="654" height="584" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1597469043551" />
+    <state x="468" y="120" width="654" height="584" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1597510431179" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1595340752502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1595340752502" />
+    <state x="178" y="73" key="new project wizard" timestamp="1598687235823">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1598687235823" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1596726690004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1596726690004" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1595203379914">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599117244647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595203379914" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599117244647" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -382,6 +391,46 @@
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.1.4.RELEASE/spring-security-web-4.1.4.RELEASE-sources.jar!/org/springframework/security/web/authentication/preauth/AbstractPreAuthenticatedProcessingFilter.java</url>
           <line>109</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-security/1.1.4.RELEASE/spring-social-security-1.1.4.RELEASE-sources.jar!/org/springframework/social/security/SocialAuthenticationFilter.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-security/1.1.4.RELEASE/spring-social-security-1.1.4.RELEASE-sources.jar!/org/springframework/social/security/SocialAuthenticationFilter.java</url>
+          <line>216</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-security/1.1.4.RELEASE/spring-social-security-1.1.4.RELEASE-sources.jar!/org/springframework/social/security/SocialAuthenticationFilter.java</url>
+          <line>324</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lilly-starter-core/src/main/java/org/lilly/core/social/defect/SocialWebAutoConfiguration.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-security/1.1.4.RELEASE/spring-social-security-1.1.4.RELEASE-sources.jar!/org/springframework/social/security/SpringSocialConfigurer.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.1.4.RELEASE/spring-security-web-4.1.4.RELEASE-sources.jar!/org/springframework/security/web/FilterChainProxy.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-security/1.1.4.RELEASE/spring-social-security-1.1.4.RELEASE-sources.jar!/org/springframework/social/security/SocialAuthenticationFilter.java</url>
+          <line>266</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/social/spring-social-security/1.1.4.RELEASE/spring-social-security-1.1.4.RELEASE-sources.jar!/org/springframework/social/security/SocialAuthenticationFilter.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

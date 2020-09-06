@@ -1,6 +1,7 @@
 package org.lilly.browser;
 
 import org.lilly.browser.support.SimpleResponse;
+import org.lilly.browser.support.SocialUserInfo;
 import org.lilly.core.properties.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,17 +12,17 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
+import org.springframework.social.connect.Connection;
+import org.springframework.social.connect.web.ProviderSignInUtils;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.ServletRequestUtils;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import org.springframework.web.context.request.ServletWebRequest;
 
 /**
  * User: Mr.Wang
@@ -37,6 +38,9 @@ public class BrowserHandlerController {
 
     @Autowired
     private SecurityProperties securityProperties;
+
+    @Autowired
+    private ProviderSignInUtils providerSignInUtils;
 
 
     /**
@@ -61,5 +65,20 @@ public class BrowserHandlerController {
         return new SimpleResponse("需要引导到用户认证的页面");
     }
 
+    /**
+     * social user
+     * @param request
+     * @return
+     */
+    @GetMapping("/social/user")
+    public SocialUserInfo getSocialUserInfo(HttpServletRequest request) {
+        SocialUserInfo userInfo = new SocialUserInfo();
+        Connection<?> connection = providerSignInUtils.getConnectionFromSession(new ServletWebRequest(request));
+        userInfo.setProviderId(connection.getKey().getProviderId());
+        userInfo.setProviderUserId(connection.getKey().getProviderUserId());
+        userInfo.setNickname(connection.getDisplayName());
+        userInfo.setHeadimg(connection.getImageUrl());
+        return userInfo;
+    }
 
 }

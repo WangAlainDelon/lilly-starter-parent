@@ -13,6 +13,11 @@
       "sourceType": "org.lilly.core.properties.SecurityProperties"
     },
     {
+      "name": "lilly.security.social",
+      "type": "org.lilly.core.properties.social.SocialProperties",
+      "sourceType": "org.lilly.core.properties.SecurityProperties"
+    },
+    {
       "name": "lilly.security.validate-code",
       "type": "org.lilly.core.properties.ValidateCodeProperties",
       "sourceType": "org.lilly.core.properties.SecurityProperties"

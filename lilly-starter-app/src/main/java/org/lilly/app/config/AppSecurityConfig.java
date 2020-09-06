@@ -8,6 +8,7 @@ import org.lilly.core.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -44,6 +45,19 @@ public class AppSecurityConfig extends AbstractChannelSecurityConfig {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //浏览器需要的配置
+
+//        http
+//                // 必须配置，不然OAuth2的http配置不生效----不明觉厉
+//                .requestMatchers()
+//                .antMatchers("/auth/login", "/auth/authorize","/oauth/authorize")
+//                .and()
+//                .authorizeRequests()
+//                // 自定义页面或处理url是，如果不配置全局允许，浏览器会提示服务器将页面转发多次
+//                .antMatchers("/auth/login", "/auth/authorize")
+//                .permitAll()
+//                .anyRequest()
+//                .authenticated();
+
         http
                 .authorizeRequests().antMatchers("/index",
                 "/authentication/require",
@@ -52,7 +66,11 @@ public class AppSecurityConfig extends AbstractChannelSecurityConfig {
                 "/code/*",
                 securityProperties.getBrowser().getLoginPage())  //允许不登陆就可以访问的方法，多个用逗号分隔
                 .permitAll()
-                .anyRequest().authenticated(); //其他的需要授权后访问
+                .anyRequest().authenticated()  //其他的需要授权后访问
+                .and().httpBasic()     // 加上basic认证解决获取授权码403的问题
+                .and().csrf().disable();
+
+
     }
 
     @Bean

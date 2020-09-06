@@ -17,6 +17,8 @@ public class BrowserProperties {
      */
     private LoginType loginType = LoginType.JSON;
 
+    private String signUpUrl = "/standard-signUp";
+
     /**
      * 默认记住我的时间
      */
@@ -44,5 +46,13 @@ public class BrowserProperties {
 
     public void setLoginType(LoginType loginType) {
         this.loginType = loginType;
+    }
+
+    public String getSignUpUrl() {
+        return signUpUrl;
+    }
+
+    public void setSignUpUrl(String signUpUrl) {
+        this.signUpUrl = signUpUrl;
     }
 }

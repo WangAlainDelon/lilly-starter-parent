@@ -1,5 +1,6 @@
 package org.lilly.core.properties;
 
+import org.lilly.core.properties.social.SocialProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,9 @@ public class SecurityProperties {
 
     private ValidateCodeProperties validateCode = new ValidateCodeProperties();
 
+    private SocialProperties social = new SocialProperties();
+
+
     public BrowserProperties getBrowser() {
         return browser;
     }
@@ -29,5 +33,13 @@ public class SecurityProperties {
 
     public void setValidateCode(ValidateCodeProperties validateCode) {
         this.validateCode = validateCode;
+    }
+
+    public SocialProperties getSocial() {
+        return social;
+    }
+
+    public void setSocial(SocialProperties social) {
+        this.social = social;
     }
 }

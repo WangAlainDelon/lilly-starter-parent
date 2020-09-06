@@ -12,6 +12,7 @@ import org.springframework.social.connect.UserProfile;
  */
 public class QQAdapter implements ApiAdapter<QQ> {
     /**
+     * 测试qq是否能链接上
      * 这里默认QQ连接通过
      *
      * @param api

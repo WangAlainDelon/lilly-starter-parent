@@ -22,6 +22,7 @@ import org.springframework.security.web.authentication.rememberme.JdbcTokenRepos
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import javax.sql.DataSource;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 /**
  * User: Mr.Wang
@@ -47,6 +48,9 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
     @Autowired
     private ValidateCodeSecurityConfig validateCodeSecurityConfig;
 
+    @Autowired
+    private SpringSocialConfigurer lillySpringSocialConfigurer;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        ValidateCodeFilter validateCodeFilter = new ValidateCodeFilter(lillyAuthenticationFailureHandler, securityProperties);
@@ -60,6 +64,8 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
                 .and()
                 .apply(smsCodeAuthenticationSecurityConfig).
                  and()
+                .apply(lillySpringSocialConfigurer)
+                .and()
                 .rememberMe()
                 .tokenRepository(tokenRepository())
                 .userDetailsService(userDetailsService)
@@ -70,7 +76,16 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
                         "/authentication/form",
                         "/authentication/mobile",
                         "/code/*",
-                        "/favicon.ico",
+//                        "/favicon.ico",
+//                        "/fonts/**",
+//                        "/js/*",
+//                        "/images/*",
+//                        "/**",
+//                        "/css/*",
+//                        "/vendor/jquery/*",
+//                        "/vendor/bootstrap/css/*",
+                        "/user/regist",
+                        securityProperties.getBrowser().getSignUpUrl(),
                         securityProperties.getBrowser().getLoginPage())  //允许不登陆就可以访问的方法，多个用逗号分隔
                 .permitAll()
                 .anyRequest().authenticated(); //其他的需要授权后访问;

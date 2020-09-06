@@ -1,5 +1,8 @@
 package org.lilly.core.social.qq;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)   //第三方服务中返回字段如果有变 忽略解析
 public class UserInfo {
 
     /**
@@ -49,7 +52,70 @@ public class UserInfo {
      */
     private String gender;
 
+    /**
+     *
+     */
+    private String 	is_lost;
+
+    private String gender_type;
+
+    private String province;
+
+    private String city;
+
+    private String year;
+
+    private String constellation;
+
+    public String getConstellation() {
+        return constellation;
+    }
+
+    public void setConstellation(String constellation) {
+        this.constellation = constellation;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getGender_type() {
+        return gender_type;
+    }
+
+    public void setGender_type(String gender_type) {
+        this.gender_type = gender_type;
+    }
+
     private String openId;
+
+    public String getIs_lost() {
+        return is_lost;
+    }
+
+    public void setIs_lost(String is_lost) {
+        this.is_lost = is_lost;
+    }
 
     public String getOpenId() {
         return openId;
@@ -133,24 +199,29 @@ public class UserInfo {
 
     /**
      * 返回示例
-     * {
-     * "ret":0,
-     * "msg":"",
-     * "nickname":"Peter",
-     * "figureurl":"http://qzapp.qlogo.cn/qzapp/111111/942FEA70050EEAFBD4DCE2C1FC775E56/30",
-     * "figureurl_1":"http://qzapp.qlogo.cn/qzapp/111111/942FEA70050EEAFBD4DCE2C1FC775E56/50",
-     * "figureurl_2":"http://qzapp.qlogo.cn/qzapp/111111/942FEA70050EEAFBD4DCE2C1FC775E56/100",
-     * "figureurl_qq_1":"http://q.qlogo.cn/qqapp/100312990/DE1931D5330620DBD07FB4A5422917B6/40",
-     * "figureurl_qq_2":"http://q.qlogo.cn/qqapp/100312990/DE1931D5330620DBD07FB4A5422917B6/100",
-     * "gender":"男",
-     * "is_yellow_vip":"1",
-     * "vip":"1",
-     * "yellow_vip_level":"7",
-     * "level":"7",
-     * "is_yellow_year_vip":"1"
-     * }
-     *
-     *
-     *  { "ret":1002, "msg":"请先登录" }
+     {
+     "ret": 0,
+     "msg": "",
+     "is_lost": 0,
+     "nickname": "『路人甲』",
+     "gender": "男",
+     "gender_type": 1,
+     "province": "四川",
+     "city": "乐山",
+     "year": "1994",
+     "constellation": "",
+     "figureurl": "http:\/\/qzapp.qlogo.cn\/qzapp\/101893703\/DB26DADE0C52721C576BC1169530EC64\/30",
+     "figureurl_1": "http:\/\/qzapp.qlogo.cn\/qzapp\/101893703\/DB26DADE0C52721C576BC1169530EC64\/50",
+     "figureurl_2": "http:\/\/qzapp.qlogo.cn\/qzapp\/101893703\/DB26DADE0C52721C576BC1169530EC64\/100",
+     "figureurl_qq_1": "http://thirdqq.qlogo.cn/g?b=oidb&k=Q6If2wA10wKMbwCYueQqxg&s=40&t=1593445861",
+     "figureurl_qq_2": "http://thirdqq.qlogo.cn/g?b=oidb&k=Q6If2wA10wKMbwCYueQqxg&s=100&t=1593445861",
+     "figureurl_qq": "http://thirdqq.qlogo.cn/g?b=oidb&k=Q6If2wA10wKMbwCYueQqxg&s=640&t=1593445861",
+     "figureurl_type": "1",
+     "is_yellow_vip": "0",
+     "vip": "0",
+     "yellow_vip_level": "0",
+     "level": "0",
+     "is_yellow_year_vip": "0"
+     }
      */
 }
